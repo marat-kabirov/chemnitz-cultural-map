@@ -1,0 +1,68 @@
+.place-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  margin-bottom: 1rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #005fa3;
+}
+
+.place-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.image-container {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.place-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.placeholder {
+  filter: grayscale(80%);
+}
+
+.place-info p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .place-details {
+    padding: 1rem;
+  }
+
+  .place-title {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

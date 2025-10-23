@@ -1,0 +1,92 @@
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #222;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-title:hover {
+  color: #0077cc;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.favorites-button {
+  background-color: white;
+  border: 1px solid #0077cc;
+  color: #0077cc;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.favorites-button:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-button,
+.login-button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover,
+.login-button:hover {
+  background-color: #c0392b;
+}
+
+.login-button {
+  background-color: #2ecc71;
+}
+
+.login-button:hover {
+  background-color: #27ae60;
+}
+
+@media (max-width: 600px) {
+  .header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .header-title {
+    font-size: 1.25rem;
+  }
+}
