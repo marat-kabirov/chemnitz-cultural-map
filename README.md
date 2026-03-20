@@ -2,8 +2,6 @@
 
 An interactive full-stack web application mapping cultural places in Chemnitz, Germany. Uses real open data from OpenStreetMap, with user authentication and favorites system.
 
-**[Live Demo](#)** <!-- сюда потом вставишь ссылку после деплоя -->
-
 ## Features
 
 - Interactive map with 200+ cultural locations (Leaflet + OpenStreetMap)
