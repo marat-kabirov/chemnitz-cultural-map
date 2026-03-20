@@ -10,7 +10,7 @@ A full-stack web application displaying cultural locations in Chemnitz, Germany.
 ## 🛠️ Tech Stack
 - **Frontend:** React, JavaScript
 - **Backend:** Node.js, Express
-- **Database:** MongoDB
+- **Database:** PostgreSQL
 - **Maps:** GeoJSON
 
 ## 👨‍💻 Author
