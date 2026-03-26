@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext, useCallback, useMemo } from "react";
 import { AuthContext } from "./AuthContext";
-
+import API_URL from "./config";
 export const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
@@ -20,7 +20,7 @@ export function FavoritesProvider({ children }) {
     setLoading(true);
     setError(null);
 
-    fetch("http://localhost:3001/api/favorites", {
+    fetch(`${API_URL}/api/favorites`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -49,7 +49,7 @@ export function FavoritesProvider({ children }) {
 
         if (isFav) {
           // Удаляем избранное
-          res = await fetch(`http://localhost:3001/api/favorites/${placeId}`, {
+          res = await fetch(`${API_URL}/api/favorites/${placeId}`, {
             method: "DELETE",
             headers: { Authorization: `Bearer ${token}` },
           });
@@ -60,7 +60,7 @@ export function FavoritesProvider({ children }) {
           }
         } else {
           // Добавляем в избранное
-          res = await fetch("http://localhost:3001/api/favorites", {
+          res = await fetch(`${API_URL}/api/favorites`, {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ export function FavoritesProvider({ children }) {
           });
           if (res.ok) {
             // Обновляем весь список, чтобы получить актуальные данные с сервера
-            const res2 = await fetch("http://localhost:3001/api/favorites", {
+            const res2 = await fetch(`${API_URL}/api/favorites`, {
               headers: { Authorization: `Bearer ${token}` },
             });
             if (res2.ok) {

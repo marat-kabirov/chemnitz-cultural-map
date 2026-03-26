@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
+import API_URL from "./config";
 
 function AuthPage() {
   const { login: doLogin } = useContext(AuthContext);
@@ -18,7 +19,7 @@ function AuthPage() {
     const endpoint = isRegistering ? "/api/register" : "/api/login";
 
     try {
-      const res = await fetch(`http://localhost:3001${endpoint}`, {
+      const res = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import API_URL from "./config";
 import { AuthContext } from "./AuthContext";
 
 import HeaderBar from "./HeaderBar";
@@ -14,7 +14,7 @@ function AppContent() {
   const { token } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/places")
+    fetch(`${process.env.REACT_APP_API_URL}/api/places`)
       .then((res) => res.json())
       .then(setPlaces)
       .catch(console.error);
