@@ -15,6 +15,20 @@ const app = express();
 app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 
+// TEMP: init DB schema
+const fs = require("fs");
+const path = require("path");
+app.get("/init-db", async (req, res) => {
+  try {
+    const sql = fs.readFileSync(path.join(__dirname, "init.sql"), "utf8");
+    await db.query(sql);
+    res.send("✅ DB initialized!");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("❌ Error: " + err.message);
+  }
+});
+
 db.query("SELECT NOW()")
   .then((res) => console.log("✅ DB connected:", res.rows[0]))
   .catch((err) => console.error("❌ DB connection error:", err));
