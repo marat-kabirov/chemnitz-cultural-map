@@ -12,7 +12,7 @@ const { swaggerUi, swaggerSpec } = require("./swagger");
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: ["http://localhost:3000", "https://chemnitz-cultural-map.netlify.app"] }));
 app.use(express.json());
 
 
